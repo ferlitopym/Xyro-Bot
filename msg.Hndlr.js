@@ -136,6 +136,9 @@ Prefix Dari Xyro Bot adalah "#"
 #botstat
 [Example : untuk melihat Statistik bot]
 
+#setstatus
+[Example: untuk mengubah status secara otomatis]
+
 #snk
 [Example : untuk melihat syarat dan ketentuan]
 
@@ -144,7 +147,15 @@ Prefix Dari Xyro Bot adalah "#"
 
          🔰End🔰', id)
          break
-     
+      //Ferlito Kalo bug chat aja wa.me/6285708707907
+      case 'setstatus':
+      case 'setstats':
+      case 'setstat':
+          if (!isOwner) return await client.reply(from, `Hanya owner yang bisa mengakses ini`, id)
+          if (!q) return await client.reply(from, `Ada yang error`, id)
+            await client.setMyStatus(q)
+            await client.reply(from, `Done set`, id)
+         break
      case '${prefix}snk':
          Xyro.reply(from, '*▪︎Syarat Dan Ketentuan▪︎*
 
